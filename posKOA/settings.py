@@ -48,6 +48,7 @@ INSTALLED_APPS = [
     'usuarios',
     'gastos',
     'arqueo',
+    'django_extensions',
 ]
 
 SIMPLE_JWT = {
@@ -80,6 +81,8 @@ REST_FRAMEWORK = {
         'rest_framework_simplejwt.authentication.JWTAuthentication',
         )
     }
+
+AUTH_USER_MODEL = 'usuarios.User'
 
 ROOT_URLCONF = 'posKOA.urls'
 
