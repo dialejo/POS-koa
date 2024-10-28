@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from models.user import User
+from ..models.user import User
 from mesas.serializers.mesa_serializer import MesaSerializer
 
 class UserSerializer(serializers.ModelSerializer):

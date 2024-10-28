@@ -9,4 +9,4 @@ class UserAdmin(admin.ModelAdmin):
     search_fields = ('username', 'email', 'name')
     
 
-admin.site.register(User)
+admin.site.register(User, UserAdmin)

@@ -49,6 +49,8 @@ INSTALLED_APPS = [
     'gastos',
     'arqueo',
     'django_extensions',
+    'rest_framework.authtoken',
+    'rest_auth',
 ]
 
 SIMPLE_JWT = {
