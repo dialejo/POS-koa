@@ -4,7 +4,7 @@ from .models.venta import Venta
 
 @admin.register(Venta)
 class VentaAdmin(admin.ModelAdmin):
-    list_display = ('id', 'mesa', 'fecha', 'total', 'usuario')  
+    list_display = ('id', 'mesa', 'fecha', 'total', 'usuario','total_con_servicio')  
     search_fields = ('mesa__numero', 'usuario__username')
     list_filter = ('fecha',)
     ordering = ('-fecha',)
