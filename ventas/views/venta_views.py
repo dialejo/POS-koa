@@ -1,6 +1,6 @@
 from rest_framework import viewsets
-from serializers.venta_serializers import VentaSerializer
-from models.venta import Venta
+from ..serializers.venta_serializers import VentaSerializer
+from ..models.venta import Venta
 from productos.models.producto import Producto
 
 class VentaViewSet(viewsets.ModelViewSet):

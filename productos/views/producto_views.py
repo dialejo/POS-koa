@@ -1,6 +1,6 @@
 from rest_framework import viewsets
-from models import Producto, Categoria  # Importamos los modelos Producto y Categoria
-from serializers.producto_serializers import ProductoSerializer, CategoriaSerializer  # Importamos los serializers
+from ..models import Producto, Categoria  # Importamos los modelos Producto y Categoria
+from ..serializers.producto_serializers import ProductoSerializer, CategoriaSerializer  # Importamos los serializers
 
 class CategoriaViewSet(viewsets.ModelViewSet):
     """

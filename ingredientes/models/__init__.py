@@ -1,0 +1,1 @@
+from .ingrediente import Ingrediente

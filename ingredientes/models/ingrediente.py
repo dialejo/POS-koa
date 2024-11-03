@@ -1,6 +1,6 @@
 from django.db import models
 
-class ingrediente(models.Model):
+class Ingrediente(models.Model):
     UNIDADES_CHOICES = [
         ('kg','kilogramos'),
         ('L','litros'),
