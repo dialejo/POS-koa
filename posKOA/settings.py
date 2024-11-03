@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'ventas',
     'productos',
     'inventario',
+    'ingredientes',
     'reportes',
     'clientes',
     'usuarios',
