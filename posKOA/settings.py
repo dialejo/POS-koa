@@ -27,7 +27,8 @@ SECRET_KEY = 'django-insecure-av%d4fig99y-olp_fz8a&c2e755^ezx$aj75o669k$i5x66629
 DEBUG = True
 
 ALLOWED_HOSTS = []
-
+CORS_ALLOW_ALL_ORIGINS = True
+CORS_ALLOW_CREDENTIALS = True
 
 # Application definition
 
@@ -52,6 +53,7 @@ INSTALLED_APPS = [
     'django_extensions',
     'rest_framework.authtoken',
     'rest_auth',
+    'corsheaders',
 ]
 
 SIMPLE_JWT = {
@@ -73,6 +75,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
 ]
 
 
@@ -165,3 +168,8 @@ STATIC_URL = '/static/'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+CORS_ALLOWED_ORIGINS = [
+    "http://localhost:8080",  # Cambia esta URL según el puerto donde esté Vue
+]
+

@@ -16,6 +16,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from usuarios.urls import router
+from rest_framework_simplejwt import views as jwt_views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -23,5 +24,7 @@ urlpatterns = [
     path('api/usuarios/', include('usuarios.urls')),
     path('api/ventas/', include('ventas.urls')),      # Ruta para ventas
     path('productos/', include('productos.urls')),  # Ruta para productos
-    path('ingredientes/', include('ingredientes.urls'))
+    path('ingredientes/', include('ingredientes.urls')),
+    path('api/token/', jwt_views.TokenObtainPairView.as_view(), name='token_obtain_pair'),
+    path('api/token/refresh/', jwt_views.TokenRefreshView.as_view(), name='token_refresh'),
 ]
