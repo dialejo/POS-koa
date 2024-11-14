@@ -1,1 +1,1 @@
-from .mesa_view import MesaViewSet
+from mesas.views.mesa_view import MesaViewSet

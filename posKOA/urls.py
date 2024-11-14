@@ -19,10 +19,9 @@ from usuarios.urls import router
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path ('api/mesas/', include('mesas.urls')),
+    path ('api/', include('mesas.urls')),
     path('api/usuarios/', include('usuarios.urls')),
-    path('api/usuarios/', include('usuarios.urls')),
-    path('ventas/', include('ventas.urls')),      # Ruta para ventas
+    path('api/ventas/', include('ventas.urls')),      # Ruta para ventas
     path('productos/', include('productos.urls')),  # Ruta para productos
     path('ingredientes/', include('ingredientes.urls'))
 ]

@@ -1,1 +1,1 @@
-from .mesa import Mesa
+from ..models.mesa import Mesa
