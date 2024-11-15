@@ -4,8 +4,8 @@ import DashboardPage from './components/Dashboard.vue';
 
 // Aquí no redirigimos aún. Haremos la lógica en los componentes directamente.
 const routes = [
-  { path: '/', component: LoginPage },
-  { path: '/dashboard', component: DashboardPage },
+  { path: '/', component: LoginPage, name:'login' },
+  { path: '/dashboard', component: DashboardPage, name:'dashboard' },
 ];
 
 const router = createRouter({
@@ -15,17 +15,12 @@ const router = createRouter({
 
 // Verificar si el usuario tiene token antes de cargar las rutas
 router.beforeEach((to, from, next) => {
-  const token = localStorage.getItem('access_token');
-  
-  if (to.path === '/' && token) {
-    // Si hay token y el usuario intenta acceder al login, redirigir al dashboard
-    next('/dashboard');
-  } else if (to.path === '/dashboard' && !token) {
-    // Si no hay token y el usuario intenta acceder al dashboard, redirigir al login
-    next('/');
+  const accessToken = localStorage.getItem('access_token');
+
+  if (to.path === '/dashboard' && !accessToken) {
+    next('/'); // Redirige al login si no hay un token
   } else {
-    // De lo contrario, continuar con la navegación
-    next();
+    next(); // Permite la navegación
   }
 });
 
