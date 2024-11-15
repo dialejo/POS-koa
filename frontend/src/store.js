@@ -1,10 +1,8 @@
-import Vue from 'vue';
-import Vuex from 'vuex';
+// src/store.js
+import { createStore } from 'vuex';
 import axios from 'axios';
 
-Vue.use(Vuex);
-
-export default new Vuex.Store({
+export default createStore({
   state: {
     accessToken: localStorage.getItem('access_token') || '',
   },
