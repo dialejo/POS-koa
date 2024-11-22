@@ -1,11 +1,18 @@
 import { createRouter, createWebHistory } from 'vue-router';
 import LoginPage from './components/Login.vue';
 import DashboardPage from './components/Dashboard.vue';
+import UserList from './components/User/UserList.vue';  // Ruta para listar usuarios
+import UserForm from './components/User/UserForm.vue';
+import RegisterPage from './components/Register.vue'; 
 
 // Aquí no redirigimos aún. Haremos la lógica en los componentes directamente.
 const routes = [
   { path: '/', component: LoginPage, name:'login' },
   { path: '/dashboard', component: DashboardPage, name:'dashboard' },
+  { path: '/users', component: UserList, name: 'user-list' },
+  { path: '/users/create', component: UserForm, name: 'user-create' },
+  { path: '/users/edit/:id', component: UserForm, name: 'user-edit' },
+  { path: '/register', component: RegisterPage, name: 'register' },
 ];
 
 const router = createRouter({

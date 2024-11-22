@@ -1,6 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import AbstractBaseUser, PermissionsMixin, BaseUserManager
-from django.contrib.auth.hashers import make_password
+
 
 class UserManager(BaseUserManager):
     def create_user(self, username, password=None, **extra_fields):
@@ -38,9 +38,6 @@ class User(AbstractBaseUser,PermissionsMixin):
     USERNAME_FIELD= 'username'
     REQUIRED_FIELDS=['email']
     
-    def save(self,*args, **kwargs):
-            super().save(*args, **kwargs)
-        
     def __str__(self):
         return self.username
     
