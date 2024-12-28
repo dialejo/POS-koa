@@ -26,8 +26,7 @@ class UserSerializer(serializers.ModelSerializer):
         if nueva_contrasena:
             instance.set_password(nueva_contrasena)  # Actualiza la contraseña
             instance.save()
-        
-        return super().update(instance, validated_data)
+        return instance
     
     def validate(self, data):
         request = self.context.get('request')

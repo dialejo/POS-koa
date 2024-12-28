@@ -8,9 +8,10 @@ class UserManager(BaseUserManager):
             raise ValueError('Users must have a user name')
         if not password:
             raise ValueError('User must have a password')
-        
+
         user = self.model(username=username,**extra_fields)
         user.set_password(password)
+        user.is_active = True
         user.save(using=self._db)
         return user
     
@@ -36,7 +37,7 @@ class User(AbstractBaseUser,PermissionsMixin):
     objects=UserManager()
     
     USERNAME_FIELD= 'username'
-    REQUIRED_FIELDS=['email']
+    REQUIRED_FIELDS=[]
     
     def __str__(self):
         return self.username
