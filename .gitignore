@@ -1,0 +1,8 @@
+# Ignorar la carpeta .vscode
+.vscode/
+
+# Ignorar archivos .env (por seguridad)
+.env
+
+# Ignorar archivos específicos
+*.log
