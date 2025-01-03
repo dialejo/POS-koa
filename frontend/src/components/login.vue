@@ -80,8 +80,12 @@
           this.$router.push('/dashboard');  // Redirige al dashboard
           console.log('redirigiendo a dashboard');
         } catch (error) {
-          this.errorMessage = 'credenciales no validas';
-          console.log(error);
+          if (error.response && error.response.status === 401) {
+            this.errorMessage = 'Usuario o contraseña incorrectos.';
+          } else {
+            this.errorMessage = 'Ocurrió un error. Por favor, inténtalo más tarde.';
+          }
+          console.error('Error en el login:', error.response || error);
         }
       },
     },
